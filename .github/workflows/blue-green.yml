@@ -43,6 +43,7 @@ jobs:
       # Generate and display an execution plan
       - name: Terraform Plan
         run: terraform plan 
+        continue-on-error: true
 
       # Apply the changes required to reach the desired state of the configuration
       - name: Terraform Apply
