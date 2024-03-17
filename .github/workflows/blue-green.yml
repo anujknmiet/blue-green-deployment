@@ -47,6 +47,7 @@ jobs:
 
       # Apply the changes required to reach the desired state of the configuration
       - name: Terraform Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve 
 
       # Check the status of the Blue environment
